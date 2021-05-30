@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+  app-container:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: sfb-pedidos
+    ports:
+      - '8080:8080'
+    environment:      
+      - SPRING_RABBITMQ_HOST=rabbitmq-container
+    depends_on:
+      - rabbitmq-container
+      - db  
+    links:
+      - db   
+  db:
+    image: mysql:5.6
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=FREIRE
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_DATABASE=pedidos
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - ./docker/volume_mysql:/var/lib/mysql
+ 
+      
+  rabbitmq-container:
+    image: rabbitmq:3-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ./rabbitmq/definitions.json:/etc/rabbitmq/definitions.json:ro
+      - ./rabbitmq/rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro
+    environment:
+      - RABBITMQ_ERLANG_COOKIE=secret_pass
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
