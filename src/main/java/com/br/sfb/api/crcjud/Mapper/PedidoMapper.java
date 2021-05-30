@@ -1,4 +1,4 @@
-package com.br.sfb.api.crcjud.Mapper;
+package com.br.sfb.api.crcjud.mapper;
 
 import java.util.List;
 import java.util.stream.Collectors;
