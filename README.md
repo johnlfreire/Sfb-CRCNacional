@@ -7,13 +7,13 @@
 
 ### Futuras Atualizações
 - [x] Estrutura inicial do Projeto
-- [] Implementação endpoint de Pedido
-- [] Implementar mensagens de erro
-- [] Implementar de segurança
-- [] Testes do endpoint de Pedido
-- [] Modelagem do sistema de Cadastro de Registro
-- [] Testes endpoint de Cadastro de Pedido
-- [] Implementação endpoint de Busca
-- [] Testes endpoint de busca
-- [] Revisão do Projeto
-- [] Implementação dos Endpoints da Area Administrativa
+- [ ] Implementação endpoint de Pedido
+- [ ] Implementar mensagens de erro
+- [ ] Implementar de segurança
+- [ ] Testes do endpoint de Pedido
+- [ ] Modelagem do sistema de Cadastro de Registro
+- [ ] Testes endpoint de Cadastro de Pedido
+- [ ] Implementação endpoint de Busca
+- [ ] Testes endpoint de busca
+- [ ] Revisão do Projeto
+- [ ] Implementação dos Endpoints da Area Administrativa
